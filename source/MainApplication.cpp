@@ -26,7 +26,7 @@ void MainApplication::Run(int argc, char** argv){
     // print information
     PrintSystemInfo();
     PrintArguments(argc, argv);
-    //TODO(robertdamerius): print raw configuration file data
+    PrintConfiguration();
     Print("\n");
 
     // start network manager, create window and run event loop
@@ -108,10 +108,15 @@ void MainApplication::PrintSystemInfo(void){
 
 void MainApplication::PrintArguments(int argc, char** argv){
     Print("arguments:                ");
-    for(int i = 0; i < argc; ++i){
+    for(int i = 1; i < argc; ++i){
         Print("[%s]",argv[i]);
     }
     Print("\n");
+}
+
+void MainApplication::PrintConfiguration(void){
+    std::string json = prismaConfiguration.GetOriginalFileContent();
+    Print("configuration:\n%s\n", json.c_str());
 }
 
 void MainApplication::RedirectPrintsToFile(void){

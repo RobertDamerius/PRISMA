@@ -16,6 +16,7 @@
 #include <filesystem>
 #include <fstream>
 #include <streambuf>
+#include <iterator>
 #include <unordered_set>
 #include <unordered_map>
 #include <mutex>

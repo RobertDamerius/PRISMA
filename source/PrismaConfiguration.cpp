@@ -59,6 +59,8 @@ bool PrismaConfiguration::ReadFromFile(std::string alternativeConfigurationFile)
     }
     try{
         std::ifstream configurationFile(filename);
+        originalFileContent.assign(std::istreambuf_iterator<char>(configurationFile), std::istreambuf_iterator<char>());
+        configurationFile.seekg(0, std::ios::beg);
         jsonData = nlohmann::json::parse(configurationFile);
     }
     catch(const std::exception& e){
@@ -109,5 +111,9 @@ bool PrismaConfiguration::ReadFromFile(std::string alternativeConfigurationFile)
         }
     }
     return success;
+}
+
+std::string PrismaConfiguration::GetOriginalFileContent(void){
+    return originalFileContent;
 }
 

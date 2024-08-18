@@ -47,6 +47,11 @@ class MainApplication: private NonCopyable {
         void PrintArguments(int argc, char** argv);
 
         /**
+         * @brief Print the content of the PRISMA configuration file that has been loaded.
+         */
+        void PrintConfiguration(void);
+
+        /**
          * @brief Redirect console prints (stdout, stderr) to a file.
          */
         void RedirectPrintsToFile(void);

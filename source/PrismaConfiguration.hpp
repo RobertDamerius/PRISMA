@@ -67,6 +67,15 @@ class PrismaConfiguration {
          * @return True if configuration file was read successfully, false otherwise.
          */
         bool ReadFromFile(std::string alternativeConfigurationFile);
+
+        /**
+         * @brief Get the original file content of the PRISMA configuration file that has been read via @ref ReadFromFile.
+         * @return Text of the configuration file that has been read via @ref ReadFromFile.
+         */
+        std::string GetOriginalFileContent(void);
+
+    private:
+        std::string originalFileContent;
 };
 
 
