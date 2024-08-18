@@ -1,0 +1,46 @@
+{
+    "window": {
+        "width": 1920,
+        "height": 1080,
+        "fullscreen": false,
+        "fullscreenMonitorIndex": 0,
+        "resizable": true,
+        "visible": true,
+        "decorated": true,
+        "focused": true,
+        "maximized": false,
+        "glMajorVersion": 4,
+        "glMinorVersion": 5,
+        "title": "PRISMA",
+        "showFPSInTitle": true,
+        "closeWithEscape": true
+    },
+    "engine": {
+        "enableWaterReflection": true,
+        "enableAtmosphericScattering": true,
+        "enableShadowMapping": true,
+        "enableAmbientOcclusion": true,
+        "enableBloom": true,
+        "maxNumDirectionalLights": 8,
+        "maxNumPointLights": 256,
+        "maxNumSpotLights": 256,
+        "ssaoKernelSize": 16,
+        "shadowFrustumSplitLevels": [0.04, 0.1, 0.5],
+        "shadowMapResolution": 4096,
+        "maxNumBloomMips": 6
+    },
+    "network": {
+        "localPort": 31416,
+        "interfaceAddress": [0,0,0,0],
+        "interfaceName": "",
+        "socketPriority": 0,
+        "socketErrorRetryTimeMs": 1000,
+        "receive": {
+            "multicastGroups": [[239,192,42,252]]
+        },
+        "send": {
+            "destinationAddresses": [[127,0,0,1,12701]],
+            "timeToLive": 1
+        }
+    }
+}

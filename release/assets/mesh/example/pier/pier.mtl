@@ -1,0 +1,117 @@
+newmtl Concrete1
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Concrete1Diffuse.png
+map_Kn Concrete1Normal.png
+map_Ks Concrete1Specular.png
+
+newmtl Concrete2
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Concrete2Diffuse.png
+map_Kn Concrete2Normal.png
+map_Ks Concrete2Specular.png
+
+newmtl Lamp
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.771038 0.800424 0.481073
+Ks 0.500000 0.500000 0.500000
+Ke 4.698384 5.000000 3.337719
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Material1
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Material1Diffuse.png
+map_Kn Material1Normal.png
+map_Ks Material1Specular.png
+
+newmtl Material2
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Material2Diffuse.png
+map_Kn Material2Normal.png
+map_Ks Material2Specular.png
+
+newmtl Material3
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Material3Diffuse.png
+map_Kn Material3Normal.png
+map_Ks Material3Specular.png
+
+newmtl Material4
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Material4Diffuse.png
+map_Kn Material4Normal.png
+map_Ks Material4Specular.png
+
+newmtl Material5
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Material5Diffuse.png
+map_Kn Material5Normal.png
+map_Ks Material5Specular.png
+
+newmtl Sand
+Ns 10.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd SandDiffuse.png
+map_Kn SandNormal.png
+map_Ks SandSpecular.png
+
+newmtl Terrain
+Ns 10.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd TerrainDiffuse.png
+map_Kn TerrainNormal.png
+map_Ks TerrainSpecular.png

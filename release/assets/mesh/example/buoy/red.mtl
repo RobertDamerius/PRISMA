@@ -1,0 +1,35 @@
+newmtl BuoyMaterial1
+Ns 50.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd BuoyMaterial1DiffuseRed.png
+map_Kn BuoyMaterial1Normal.png
+map_Ks BuoyMaterial1Specular.png
+
+newmtl BuoyMaterial2
+Ns 50.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd BuoyMaterial2Diffuse.png
+map_Kn BuoyMaterial2Normal.png
+map_Ks BuoyMaterial2Specular.png
+
+newmtl MaterialLamp
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 5.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd BuoyLampDiffuse.png
+map_Kn BuoyLampNormal.png
+map_Ks BuoyLampSpecular.png
