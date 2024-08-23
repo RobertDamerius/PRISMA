@@ -376,10 +376,10 @@ This message sets atmospheric parameters for PRISMA.
 ### Ambient Light Message
 This message sets the ambient light state for PRISMA.
 
-| Datatype | Name          | Description                                                |
-| :------- | :------------ | :--------------------------------------------------------- |
-| `uint8`  | `messageType` | Header indicating the type of the message. Must be `0x04`. |
-| `float`  | `color [3]`   | Color of the ambient light.                                |
+| Datatype     | Name          | Description                                                |
+| :----------- | :------------ | :--------------------------------------------------------- |
+| `uint8`      | `messageType` | Header indicating the type of the message. Must be `0x04`. |
+| `float [3] ` | `color`       | Color of the ambient light.                                |
 
 
 ### Directional Light Message
