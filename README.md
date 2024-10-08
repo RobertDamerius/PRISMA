@@ -295,6 +295,7 @@ Before rendering a frame, PRISMA polls the window events and sends a window even
 
 ### Clear Message
 A clear message resets the internal state of PRISMA to default values.
+
 | Datatype | Name          | Description                                                |
 | :------- | :------------ | :--------------------------------------------------------- |
 | `uint8`  | `messageType` | Header indicating the type of the message. Must be `0x00`. |
