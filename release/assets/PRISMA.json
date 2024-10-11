@@ -13,7 +13,8 @@
         "glMinorVersion": 5,
         "title": "PRISMA",
         "showFPSInTitle": true,
-        "closeWithEscape": true
+        "closeWithEscape": true,
+        "allowManualCameraControl": true
     },
     "engine": {
         "enableWaterReflection": true,

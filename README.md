@@ -79,23 +79,23 @@ They require the [GenericTarget](https://github.com/RobertDamerius/GenericTarget
 
 ### Controls
 By default, the camera is controlled via the [camera message](#camera-message).
-However, the camera can also be operated manually using the mouse and keyboard.
+However, the camera can also be operated manually using the mouse and keyboard if the option `window.allowManualCameraControl` is set to `true` in the [configuration file](#prisma-configuration-file).
 Press `F1` to toggle manual camera control.
 If PRISMA is in manual camera control mode, an `M` appears in the bottom-right corner.
 All available controls are listed in the tables below.
 
 **Keyboard Settings**<br>
 
-| Key      | Description                                                                                                                   |
-| :------- | :---------------------------------------------------------------------------------------------------------------------------- |
-| `F1`     | Toggle the manual camera control mode.                                                                                        |
-| `ESC`    | Close PRISMA if the option `window.closeWithEscape` is set to `True` in the [configuration file](#prisma-configuration-file). |
-| `W`      | Move camera forward if manual camera control is enabled.                                                                      |
-| `A`      | Move camera to the left if manual camera control is enabled.                                                                  |
-| `S`      | Move camera back if manual camera control is enabled.                                                                         |
-| `D`      | Move camera to the right if manual camera control is enabled.                                                                 |
-| `SPACE`  | Move camera up if manual camera control is enabled.                                                                           |
-| `LSHIFT` | Move camera down if manual camera control is enabled.                                                                         |
+| Key      | Description                                                                                                                                                     |
+| :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `F1`     | Toggle the manual camera control mode if the option `window.allowManualCameraControl` is set to `true` in the [configuration file](#prisma-configuration-file). |
+| `ESC`    | Close PRISMA if the option `window.closeWithEscape` is set to `true` in the [configuration file](#prisma-configuration-file).                                   |
+| `W`      | Move camera forward if manual camera control is enabled.                                                                                                        |
+| `A`      | Move camera to the left if manual camera control is enabled.                                                                                                    |
+| `S`      | Move camera back if manual camera control is enabled.                                                                                                           |
+| `D`      | Move camera to the right if manual camera control is enabled.                                                                                                   |
+| `SPACE`  | Move camera up if manual camera control is enabled.                                                                                                             |
+| `LSHIFT` | Move camera down if manual camera control is enabled.                                                                                                           |
 
 **Mouse Settings**<br>
 
@@ -178,6 +178,7 @@ A list of keys that must be set is shown in the following table.
 | `window.title`                       | "PRISMA"            | The window title to be set.                                                                                                            |
 | `window.showFPSInTitle`              | true                | True if FPS should be shown in title.                                                                                                  |
 | `window.closeWithEscape`             | true                | True if the window should be closed with the escape key of the keyboard.                                                               |
+| `window.allowManualCameraControl`    | true                | True if the camera is allowed to be controlled manually.                                                                               |
 | `engine.enableWaterReflection`       | true                | True if water reflection should be enabled, false otherwise.                                                                           |
 | `engine.enableAtmosphericScattering` | true                | True if atmospheric scattering should be enabled, false otherwise.                                                                     |
 | `engine.enableShadowMapping`         | true                | True if shadow mapping should be enabled, false otherwise.                                                                             |

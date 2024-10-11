@@ -21,6 +21,7 @@ class PrismaConfiguration {
             std::string title;                                        // The window title to be set.
             bool showFPSInTitle;                                      // True if FPS should be shown in title.
             bool closeWithEscape;                                     // True if the window should be closed with the escape key of the keyboard.
+            bool allowManualCameraControl;                            // True if the camera is allowed to be controlled manually.
         } window;
         struct {
             bool enableWaterReflection;                               // True if water reflection should be enabled, false otherwise.

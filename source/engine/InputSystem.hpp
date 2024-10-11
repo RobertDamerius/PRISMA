@@ -74,7 +74,7 @@ class InputSystem {
                     glfwSetWindowShouldClose(wnd, GLFW_TRUE);
                 }
             }
-            else if(GLFW_KEY_F1 == key){
+            else if((GLFW_KEY_F1 == key) && prismaConfiguration.window.allowManualCameraControl){ // toggle manual camera control
                 switch(action){
                     case GLFW_PRESS:
                         enableManualCameraControl = !enableManualCameraControl;

@@ -25,6 +25,7 @@ void PrismaConfiguration::Clear(void){
     window.title = "PRISMA";
     window.showFPSInTitle = false;
     window.closeWithEscape = true;
+    window.allowManualCameraControl = true;
     engine.enableWaterReflection = true;
     engine.enableAtmosphericScattering = true;
     engine.enableShadowMapping = true;
@@ -84,6 +85,7 @@ bool PrismaConfiguration::ReadFromFile(std::string alternativeConfigurationFile)
     try{ window.title                       = jsonData.at("window").at("title");                                                } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ window.showFPSInTitle              = jsonData.at("window").at("showFPSInTitle");                                       } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ window.closeWithEscape             = jsonData.at("window").at("closeWithEscape");                                      } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
+    try{ window.allowManualCameraControl    = jsonData.at("window").at("allowManualCameraControl");                             } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ engine.enableWaterReflection       = jsonData.at("engine").at("enableWaterReflection");                                } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ engine.enableAtmosphericScattering = jsonData.at("engine").at("enableAtmosphericScattering");                          } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ engine.enableShadowMapping         = jsonData.at("engine").at("enableShadowMapping");                                  } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
