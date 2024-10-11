@@ -78,6 +78,9 @@ class InputSystem {
                 switch(action){
                     case GLFW_PRESS:
                         enableManualCameraControl = !enableManualCameraControl;
+                        if(!enableManualCameraControl){
+                            glfwSetInputMode(wnd, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+                        }
                         break;
                 }
             }
