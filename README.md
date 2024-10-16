@@ -305,21 +305,21 @@ A clear message resets the internal state of PRISMA to default values.
 ### Engine Parameter Message
 This message sets tuning parameters for the pipeline of the graphics engine.
 
-| Datatype | Name                        | Description                                                       |
-| :------- | :-------------------------- | :---------------------------------------------------------------- |
-| `uint8`  | `messageType`               | Header indicating the type of the message. Must be `0x01`.        |
-| `float`  | `ambientOcclusionRadius`    | Radius for the ambient occlusion.                                 |
-| `float`  | `ambientOcclusionBias`      | Bias for ambient occlusion.                                       |
-| `float`  | `ambientOcclusionEnhance`   | Enhancement of the ambient occlusion strength.                    |
-| `float`  | `removeShadowOnWater`       | Amount for removing shadow on water.                              |
-| `float`  | `bloomBrightnessThreshold`  | Brightness threshold for bloom effects.                           |
-| `float`  | `bloomStrength`             | Bloom strength during post-processing.                            |
-| `float`  | `gamma`                     | Gamma value of the monitor.                                       |
-| `float`  | `ditheringNoiseGranularity` | Noise granularity for the dithering noise during post-processing. |
-| `float`  | `shadowBiasMin`             | Minimum value for shadow bias.                                    |
-| `float`  | `shadowBiasMax`             | Maximum value for shadow bias.                                    |
-| `float`  | `exposure`                  | Exposure value during post-processing.                            |
-| `float`  | `toneMappingStrength`       | Tone mapping strength during post-processing.                     |
+| Datatype | Name                        | Description                                                                      |
+| :------- | :-------------------------- | :------------------------------------------------------------------------------- |
+| `uint8`  | `messageType`               | Header indicating the type of the message. Must be `0x01`.                       |
+| `float`  | `ambientOcclusionRadius`    | Radius for the ambient occlusion.                                                |
+| `float`  | `ambientOcclusionBias`      | Bias for ambient occlusion.                                                      |
+| `float`  | `ambientOcclusionEnhance`   | Enhancement of the ambient occlusion strength.                                   |
+| `float`  | `removeShadowOnWater`       | Amount for removing shadow on water.                                             |
+| `float`  | `bloomBrightnessThreshold`  | Brightness threshold for bloom effects.                                          |
+| `float`  | `bloomStrength`             | Bloom strength during post-processing.                                           |
+| `float`  | `gamma`                     | Gamma value of the monitor.                                                      |
+| `float`  | `ditheringNoiseGranularity` | Noise granularity for the dithering noise during post-processing.                |
+| `float`  | `shadowBiasMin`             | Minimum value for shadow bias.                                                   |
+| `float`  | `shadowBiasMax`             | Maximum value for shadow bias.                                                   |
+| `float`  | `exposure`                  | Exposure value during post-processing. Use a negative value to disable exposure. |
+| `float`  | `toneMappingStrength`       | Tone mapping strength during post-processing.                                    |
 
 
 ### Camera Message
