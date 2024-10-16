@@ -1,5 +1,6 @@
 #include <ColorMesh.hpp>
 #include <StringHelper.hpp>
+#include <PrismaConfiguration.hpp>
 
 
 ColorMesh::ColorMesh(){
@@ -166,7 +167,9 @@ bool ColorMesh::ParsePlyData(std::ifstream& file){
                     if(igreen >= 0) v.color[1] = static_cast<GLfloat>(std::stod(words[igreen]) / 255.0);
                     if(iblue >= 0) v.color[2] = static_cast<GLfloat>(std::stod(words[iblue]) / 255.0);
                     EnsureCorrectNormal(v);
-                    SRGBToLinearRGB(v);
+                    if(prismaConfiguration.engine.convertSRGBToLinearRGB){
+                        SRGBToLinearRGB(v);
+                    }
                     plyVertices.push_back(v);
                 }
                 else if(0 == element.name.compare("face")){

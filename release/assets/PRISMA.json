@@ -28,7 +28,8 @@
         "ssaoKernelSize": 16,
         "shadowFrustumSplitLevels": [0.04, 0.1, 0.5],
         "shadowMapResolution": 4096,
-        "maxNumBloomMips": 6
+        "maxNumBloomMips": 6,
+        "convertSRGBToLinearRGB": true
     },
     "network": {
         "localPort": 31416,

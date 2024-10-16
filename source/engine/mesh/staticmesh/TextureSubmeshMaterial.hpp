@@ -4,6 +4,7 @@
 #include <Common.hpp>
 #include <ImageTexture2D.hpp>
 #include <ShaderTextureMesh.hpp>
+#include <PrismaConfiguration.hpp>
 
 
 /**
@@ -71,7 +72,7 @@ class TextureSubmeshMaterial {
          * @return True if success, false otherwise.
          */
         bool Generate(void){
-            bool success = diffuseMap.Generate(GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, true, true, true);
+            bool success = diffuseMap.Generate(GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, true, true, prismaConfiguration.engine.convertSRGBToLinearRGB);
             success &= normalMap.Generate(GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, true, true, false);
             success &= emissionMap.Generate(GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, true, true, false);
             success &= specularMap.Generate(GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, true, true, false);

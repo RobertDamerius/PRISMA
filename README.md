@@ -191,6 +191,7 @@ A list of keys that must be set is shown in the following table.
 | `engine.shadowFrustumSplitLevels`    | [0.04, 0.1, 0.5]    | Normalized frustum split levels for cascaded shadow mapping.                                                                           |
 | `engine.shadowMapResolution`         | 4096                | Resolution of the shadow map in pixels.                                                                                                |
 | `engine.maxNumBloomMips`             | 6                   | The maximum number of bloom mips.                                                                                                      |
+| `engine.convertSRGBToLinearRGB`      | true                | True if mesh color and diffuse maps should be converted from standard RGB (sRGB) to linear RGB, false otherwise.                       |
 | `network.localPort`                  | 31416               | The local port to be bound.                                                                                                            |
 | `network.interfaceAddress`           | [0,0,0,0]           | IPv4 address of the network interface to be used for joining the multicast group.                                                      |
 | `network.interfaceName`              | ""                  | Name of the network interface to be used for joining the multicast group. If this string is empty, `network.interfaceAddress` is used. |

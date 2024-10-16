@@ -38,6 +38,7 @@ void PrismaConfiguration::Clear(void){
     engine.shadowFrustumSplitLevels = {0.04f, 0.1f, 0.5f};
     engine.shadowMapResolution = 4096;
     engine.maxNumBloomMips = 6;
+    engine.convertSRGBToLinearRGB = true;
     network.localPort = 31416;
     network.interfaceAddress = {0,0,0,0};
     network.interfaceName = "";
@@ -98,6 +99,7 @@ bool PrismaConfiguration::ReadFromFile(std::string alternativeConfigurationFile)
     try{ engine.shadowFrustumSplitLevels    = jsonData.at("engine").at("shadowFrustumSplitLevels").get<std::vector<GLfloat>>(); } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ engine.shadowMapResolution         = jsonData.at("engine").at("shadowMapResolution");                                  } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ engine.maxNumBloomMips             = jsonData.at("engine").at("maxNumBloomMips");                                      } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
+    try{ engine.convertSRGBToLinearRGB      = jsonData.at("engine").at("convertSRGBToLinearRGB");                               } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ network.localPort                  = jsonData.at("network").at("localPort");                                           } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ network.interfaceAddress           = jsonData.at("network").at("interfaceAddress");                                    } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }
     try{ network.interfaceName              = jsonData.at("network").at("interfaceName");                                       } catch(const std::exception& e){ success = false; PrintE("Error in configuration file \"%s\": %s\n", filename.c_str(), e.what()); }

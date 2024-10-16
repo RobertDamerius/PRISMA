@@ -36,6 +36,7 @@ class PrismaConfiguration {
             std::vector<GLfloat> shadowFrustumSplitLevels;            // Normalized frustum split levels for cascaded shadow mapping.
             GLsizei shadowMapResolution;                              // Resolution of the shadow map in pixels.
             GLuint maxNumBloomMips;                                   // The maximum number of bloom mips.
+            bool convertSRGBToLinearRGB;                              // True if mesh color and diffuse maps should be converted from standard RGB (sRGB) to linear RGB, false otherwise.
         } engine;
         struct {
             uint16_t localPort;                                       // The local port to be bound.
