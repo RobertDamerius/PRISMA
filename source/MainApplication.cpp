@@ -83,6 +83,25 @@ void MainApplication::PrintSystemInfo(void){
         }
         if_freenameindex(if_ni);
     }
+    #elif _WIN32
+    PIP_ADAPTER_INFO pAdapterInfo = 0;
+    PIP_ADAPTER_INFO pAdapter;
+    DWORD dwSize = 0;
+    if(GetAdaptersInfo(pAdapterInfo, &dwSize) == ERROR_BUFFER_OVERFLOW){
+        pAdapterInfo = (PIP_ADAPTER_INFO)malloc(dwSize);
+    }
+    if(GetAdaptersInfo(pAdapterInfo, &dwSize) == NO_ERROR){
+        pAdapter = pAdapterInfo;
+        while(pAdapter){
+            std::string name(pAdapter->AdapterName);
+            std::string description(pAdapter->Description);
+            Print("[%s (%s)]", name.c_str(), description.c_str());
+            pAdapter = pAdapter->Next;
+        }
+    }
+    if(pAdapterInfo){
+        free(pAdapterInfo);
+    }
     #else
     Print("unknown");
     #endif
