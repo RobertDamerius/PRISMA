@@ -188,6 +188,18 @@ bool TextureMesh::ReadFromFile(std::string filename){
         PrintE("Could not parse data of obj file \"%s\"!\n", filename.c_str());
         return false;
     }
+
+    // remove objects, that have no vertices or indices
+    for(auto it = objects.begin(); it != objects.end();){
+        if(it->vertices.empty() || it->indices.empty()){
+            it = objects.erase(it);
+        }
+        else{
+            ++it;
+        }
+    }
+
+    // update submeshes and aabb
     submeshes.swap(objects);
     UpdateAABB();
     return true;
