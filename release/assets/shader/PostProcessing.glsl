@@ -57,7 +57,7 @@ void main(void){
     vec3 finalColor = sceneColor + bloomStrength * bloomColor;
 
     // exposure, tonemapping and gamma correction
-    finalColor = mix(vec3(1.0f) - exp(-finalColor * exposure), finalColor, exposure < 0.0f);
+    finalColor = mix(vec3(1.0f) - exp(-finalColor * exposure), finalColor, float(exposure < 0.0f));
     finalColor = ToneMapping(finalColor, toneMappingStrength);
     finalColor = pow(finalColor, vec3(invGamma));
 
