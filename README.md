@@ -10,7 +10,7 @@ This repository is structured as follows.
 | File / Directory   | Description                                                                                                                              |
 | :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
 | release            | contains the release application and all files required at runtime                                                                       |
-| matlab             | contains a MATLAB/simulink project with a simulink library (>= R2024a) that can be used to pack and unpack messages to be sent to PRISMA |
+| matlab             | contains a MATLAB/simulink project with a simulink library (>= R2025a) that can be used to pack and unpack messages to be sent to PRISMA |
 | source             | contains the whole source code of PRISMA as well as third party code                                                                     |
 | workspace          | contains additional sources such as logo, images, etc.                                                                                   |
 | LICENSE            | license information                                                                                                                      |

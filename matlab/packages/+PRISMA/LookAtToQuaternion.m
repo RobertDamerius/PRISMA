@@ -1,5 +1,6 @@
 function quaternion = LookAtToQuaternion(eyePosition, lookAtPosition)
     %PRISMA.LookAtToQuaternion Calculate the unit quaternion for a non-rolling camera based on the eye position and the look-at position.
+    % The coordinate system is defined to be the NED frame.
     % 
     % PARAMETER
     % eyePosition    ... A three-dimensional vector representing the eye position from where to look, e.g. the camera position.
@@ -37,3 +38,4 @@ function quaternion = LookAtToQuaternion(eyePosition, lookAtPosition)
     q = rotm2quat(Rb2n);
     quaternion = [q(1); q(2); q(3); q(4)];
 end
+
