@@ -239,16 +239,16 @@ PRISMA searches for the specified images relative to the material file.
 The following entries in the material file are used.
 If an entry is not specified, then the default value is applied.
 
-| Property        | Default Value          | Description                              |
-| :-------------- | :--------------------- | :----------------------------------------|
-| `Ns`            | `0`                    | Scalar value representing the shininess. |
-| `Kd`            | `{0, 0, 0}`            | Diffuse color.                           |
-| `Ke`            | `{0, 0, 0}`            | Emission color.                          |
-| `Ks`            | `{0, 0, 0}`            | Specular color.                          |
-| `map_Kd`        | `{255, 255, 255, 255}` | Texture for the diffuse map.             |
-| `map_Ke`        | `{255, 255, 255}`      | Texture for the emission map.            |
-| `map_Ks`        | `{255, 255, 255}`      | Texture for the specular map.            |
-| `norm`,`map_Kn` | `{128, 128, 255}`      | Texture for the normal map.              |
+| Property                          | Default Value          | Description                              |
+| :-------------------------------- | :--------------------- | :----------------------------------------|
+| `Ns`                              | `0`                    | Scalar value representing the shininess. |
+| `Kd`                              | `{0, 0, 0}`            | Diffuse color.                           |
+| `Ke`                              | `{0, 0, 0}`            | Emission color.                          |
+| `Ks`                              | `{0, 0, 0}`            | Specular color.                          |
+| `map_Kd`                          | `{255, 255, 255, 255}` | Texture for the diffuse map.             |
+| `map_Ke`                          | `{255, 255, 255}`      | Texture for the emission map.            |
+| `map_Ks`                          | `{255, 255, 255}`      | Texture for the specular map.            |
+| `norm`,`map_Kn`,`bump`,`map_Bump` | `{128, 128, 255}`      | Texture for the normal map.              |
 
 During rendering, a texture map is multiplied by the corresponding color value to obtain the resulting fragment color, e.g. `Kd * vec3(map_Kd)`.
 

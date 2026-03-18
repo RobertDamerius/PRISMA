@@ -308,7 +308,7 @@ bool TextureMesh::ReadMaterialLibrary(std::vector<TextureSubmeshMaterial>& mater
                     materials.back().specularColor = glm::vec3(1.0f);
                 }
             }
-            else if((0 == words[0].compare("norm")) || (0 == words[0].compare("map_Kn"))){ // normal map
+            else if((0 == words[0].compare("norm")) || (0 == words[0].compare("map_Kn")) || (0 == words[0].compare("bump")) || (0 == words[0].compare("map_Bump"))){ // normal map
                 if(materials.empty()){
                     throw(0);
                 }
