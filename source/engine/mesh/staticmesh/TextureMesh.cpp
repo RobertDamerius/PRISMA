@@ -270,7 +270,7 @@ bool TextureMesh::ReadMaterialLibrary(std::vector<TextureSubmeshMaterial>& mater
                 if(materials.empty()){
                     throw(0);
                 }
-                std::string imageFilename = line.substr(7);
+                std::string imageFilename = line.substr(words[0].length() + 1);
                 std::filesystem::path p(filename);
                 p.replace_filename(imageFilename);
                 if(!materials.back().diffuseMap.ReadFromPngFile(p.string(), true)){
@@ -284,7 +284,7 @@ bool TextureMesh::ReadMaterialLibrary(std::vector<TextureSubmeshMaterial>& mater
                 if(materials.empty()){
                     throw(0);
                 }
-                std::string imageFilename = line.substr(7);
+                std::string imageFilename = line.substr(words[0].length() + 1);
                 std::filesystem::path p(filename);
                 p.replace_filename(imageFilename);
                 if(!materials.back().emissionMap.ReadFromPngFile(p.string(), false)){
@@ -298,7 +298,7 @@ bool TextureMesh::ReadMaterialLibrary(std::vector<TextureSubmeshMaterial>& mater
                 if(materials.empty()){
                     throw(0);
                 }
-                std::string imageFilename = line.substr(7);
+                std::string imageFilename = line.substr(words[0].length() + 1);
                 std::filesystem::path p(filename);
                 p.replace_filename(imageFilename);
                 if(!materials.back().specularMap.ReadFromPngFile(p.string(), false)){
@@ -312,7 +312,7 @@ bool TextureMesh::ReadMaterialLibrary(std::vector<TextureSubmeshMaterial>& mater
                 if(materials.empty()){
                     throw(0);
                 }
-                std::string imageFilename = line.substr(7);
+                std::string imageFilename = line.substr(words[0].length() + 1);
                 std::filesystem::path p(filename);
                 p.replace_filename(imageFilename);
                 if(!materials.back().normalMap.ReadFromPngFile(p.string(), false)){
