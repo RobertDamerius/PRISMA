@@ -174,7 +174,7 @@ void main(){
     // set G-buffer outputs
     gBufferPosition = fsIn.position;
     gBufferDiffuse = diffuseColor * diffuseMap.rgb;
-    gBufferNormal = normalViewSpace;
+    gBufferNormal = normalize(normalViewSpace);
     gBufferEmissionReflection = vec4(emissionColor * emissionMap, 0.0f);
     gBufferSpecularShininess = vec4(specularColor * specularMap, shininess);
     gBufferFaceNormal = normalize(fsIn.faceNormal);
