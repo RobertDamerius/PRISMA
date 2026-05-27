@@ -25,6 +25,7 @@
 #include <condition_variable>
 #include <future>
 #include <random>
+#include <algorithm>
 
 
 /* OS depending */
