@@ -44,9 +44,8 @@
 // Other
 #endif
 
-/* OpenGL GLEW/GLFW/GLM */
-#define GLEW_STATIC
-#include <GL/glew.h>
+/* OpenGL GLAD/GLFW/GLM */
+#include <glad/glad.h>
 #ifdef _WIN32
 #define GLFW_EXPOSE_NATIVE_WGL
 #define GLFW_EXPOSE_NATIVE_WIN32

@@ -116,14 +116,13 @@ If the corresponding libraries to be linked against are named differently, you c
 
 ### External libraries required
 Some third-party source code files are already present in the `source/thirdparty` directory. These include
-[json](https://github.com/nlohmann/json), [LodePNG](https://github.com/lvandeve/lodepng) and [Earcut](https://github.com/mapbox/earcut).
+[glad](https://glad.dav1d.de), [json](https://github.com/nlohmann/json), [LodePNG](https://github.com/lvandeve/lodepng) and [Earcut](https://github.com/mapbox/earcut).
 All other required external libraries are shown in the following table.
 
 | Library                                      | Windows (MSYS2/MinGW64)              | Linux (Ubuntu)                       | Comment                                          |
 | :------------------------------------------- | :----------------------------------- | :----------------------------------- | :----------------------------------------------- |
 | OpenGL                                       | already comes with MSYS2/MinGW64     | `sudo apt install libgl1-mesa-dev`   | OpenGL                                           |
 | [GLFW3](https://github.com/glfw/glfw)        | `pacman -S mingw-w64-x86_64-glfw`    | `sudo apt install libglfw3-dev`      | used to create window and OpenGL-context         |
-| [GLEW](http://glew.sourceforge.net)          | `pacman -S mingw-w64-x86_64-glew`    | `sudo apt install libglew-dev`       | OpenGL extension wrangler library                |
 | [GLM](https://github.com/g-truc/glm)         | `pacman -S mingw-w64-x86_64-glm`     | `sudo apt install libglm-dev`        | OpenGL mathematics                               |
 
 

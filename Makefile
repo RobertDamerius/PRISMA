@@ -41,8 +41,8 @@ DIRECTORY_PCH     := source/precompiled/
 CC_FLAGS        = -Wall -Wextra -mtune=native
 CPP_FLAGS       = -Wall -Wextra -mtune=native -std=c++20
 LD_FLAGS        = -Wall -Wextra -mtune=native
-LIBS_WINDOWS   := -lstdc++ -lpthread -lglfw3 -lglew32 -lopengl32 -lgdi32 -lws2_32 -lIphlpapi
-LIBS_LINUX     := -lstdc++ -lpthread -lglfw -lGLEW -lGL
+LIBS_WINDOWS   := -lstdc++ -lpthread -lglfw3 -lopengl32 -lgdi32 -lws2_32 -lIphlpapi
+LIBS_LINUX     := -lstdc++ -lpthread -lglfw -lGL
 DEP_FLAGS       = -MT $@ -MMD -MP -MF $(DIRECTORY_BUILD)$*.Td
 POSTCOMPILE     = $(MV) -f $(DIRECTORY_BUILD)$*.Td $(DIRECTORY_BUILD)$*.d
 CC_SYMBOLS      = 

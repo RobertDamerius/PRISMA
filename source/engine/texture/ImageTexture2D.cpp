@@ -83,8 +83,8 @@ bool ImageTexture2D::Generate(GLenum textureWrapping, GLenum textureMinFilter, G
     DEBUG_GLCHECK( glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, textureMaxFilter); );
     if(useAnisotropy){
         GLfloat maxAnisotropy;
-        DEBUG_GLCHECK( glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &maxAnisotropy); );
-        DEBUG_GLCHECK( glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, maxAnisotropy); );
+        DEBUG_GLCHECK( glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY, &maxAnisotropy); );
+        DEBUG_GLCHECK( glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY, maxAnisotropy); );
     }
     imageData.clear();
     return true;

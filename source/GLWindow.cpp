@@ -81,18 +81,19 @@ bool GLWindow::Initialize(GLWindowCallbacks* callbacks){
 
     // Set OpenGL context
     glfwMakeContextCurrent(glfwWindow);
-    glfwSwapInterval(1);
-    PrintGLInfo();
 
-    // Initiate GLEW
-    glewExperimental = GL_TRUE;
-    if(GLEW_OK != glewInit()){
-        PrintE("Could not initialize GLEW!\n");
+    // Initialize GLAD
+    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+        PrintE("Could not initialize GLAD!\n");
         glfwDestroyWindow(glfwWindow);
         glfwWindow = nullptr;
         glfwTerminate();
         return false;
     }
+
+    // Set swap interval and print info
+    glfwSwapInterval(1);
+    PrintGLInfo();
     return true;
 }
 
