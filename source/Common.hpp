@@ -60,33 +60,15 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Version Settings
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-extern const std::string strOS;
-extern const std::string strVersion;
-extern const std::string strCompilerVersion;
-extern const std::string strBuilt;
+extern const char* const PRISMA_VERSION;
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Macros For Thread-safe Console Prints
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-static std::mutex __prisma_mtx_print;
-
-inline void __prisma_print(const char* format, ...){
-    const std::lock_guard<std::mutex> lk(__prisma_mtx_print);
-    va_list argptr;
-    va_start(argptr, format);
-    vfprintf(stderr, format, argptr);
-    va_end(argptr);
-}
-
-inline void __prisma_print_verbose(const char* prefix, const char* file, const int line, const char* func, const char* format, ...){
-    const std::lock_guard<std::mutex> lk(__prisma_mtx_print);
-    fprintf(stderr,"%s %s:%d in %s(): ", prefix, file, line, func);
-    va_list argptr;
-    va_start(argptr, format);
-    vfprintf(stderr, format, argptr);
-    va_end(argptr);
-}
+extern std::mutex __prisma_mtx_print;
+extern void __prisma_print(const char* format, ...);
+extern void __prisma_print_verbose(const char* prefix, const char* file, const int line, const char* func, const char* format, ...);
 
 
 #define Print(...) __prisma_print(__VA_ARGS__)
@@ -98,17 +80,8 @@ inline void __prisma_print_verbose(const char* prefix, const char* file, const i
 // Debug macros for GL
 // Example: DEBUG_GLCHECK( glBindTexture(GL_TEXTURE_2D, 0); );
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-inline std::string GLErrorToString(GLenum error){
-    if(GL_NO_ERROR == error)                        return std::string("GL_NO_ERROR");
-    if(GL_INVALID_ENUM == error)                    return std::string("GL_INVALID_ENUM");
-    if(GL_INVALID_VALUE == error)                   return std::string("GL_INVALID_VALUE");
-    if(GL_INVALID_OPERATION == error)               return std::string("GL_INVALID_OPERATION");
-    if(GL_INVALID_FRAMEBUFFER_OPERATION == error)   return std::string("GL_INVALID_FRAMEBUFFER_OPERATION");
-    if(GL_OUT_OF_MEMORY == error)                   return std::string("GL_OUT_OF_MEMORY");
-    if(GL_STACK_UNDERFLOW == error)                 return std::string("GL_STACK_UNDERFLOW");
-    if(GL_STACK_OVERFLOW == error)                  return std::string("GL_STACK_OVERFLOW");
-    return std::string("UNKNOWN GL ERROR");
-}
+extern std::string GLErrorToString(GLenum error);
+
 
 #ifdef DEBUG
 #define DEBUG_GLCHECK(stmt)    \

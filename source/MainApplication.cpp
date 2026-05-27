@@ -48,62 +48,71 @@ void MainApplication::PrintSystemInfo(void){
     Print("PRISMA\n\n");
 
     // operating system
-    Print("operating system:         %s\n", strOS.c_str());
     #if __linux__
-    struct utsname info;
-    (void) uname(&info);
-    Print("sysname:                  %s\n", info.sysname);
-    Print("nodename:                 %s\n", info.nodename);
-    Print("release:                  %s\n", info.release);
-    Print("version:                  %s\n", info.version);
-    Print("machine:                  %s\n", info.machine);
-    #ifdef __USE_GNU
-    Print("domainname:               %s\n", info.domainname);
-    #endif
+        Print("operating system:         Linux\n");
+        struct utsname info;
+        (void) uname(&info);
+        Print("sysname:                  %s\n", info.sysname);
+        Print("nodename:                 %s\n", info.nodename);
+        Print("release:                  %s\n", info.release);
+        Print("version:                  %s\n", info.version);
+        Print("machine:                  %s\n", info.machine);
+        #ifdef __USE_GNU
+        Print("domainname:               %s\n", info.domainname);
+        #endif
+    #elif __FreeBSD__
+        Print("operating system:         FreeBSD\n");
+    #elif __ANDROID__
+        Print("operating system:         Android\n");
+    #elif __APPLE__
+        Print("operating system:         macOS\n");
     #elif _WIN32
-    OSVERSIONINFO osvi;
-    ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
-    osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-    (void) GetVersionEx(&osvi);
-    Print("dwBuildNumber:            %ld\n", osvi.dwBuildNumber);
-    Print("dwMajorVersion:           %ld\n", osvi.dwMajorVersion);
-    Print("dwMinorVersion:           %ld\n", osvi.dwMinorVersion);
-    Print("dwPlatformId:             %ld\n", osvi.dwPlatformId);
-    Print("szCSDVersion:             %s\n", osvi.szCSDVersion);
+        Print("operating system:         Windows\n");
+        OSVERSIONINFO osvi;
+        ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
+        osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+        (void) GetVersionEx(&osvi);
+        Print("dwBuildNumber:            %ld\n", osvi.dwBuildNumber);
+        Print("dwMajorVersion:           %ld\n", osvi.dwMajorVersion);
+        Print("dwMinorVersion:           %ld\n", osvi.dwMinorVersion);
+        Print("dwPlatformId:             %ld\n", osvi.dwPlatformId);
+        Print("szCSDVersion:             %s\n", osvi.szCSDVersion);
+    #else
+        Print("operating system:         unknown\n");
     #endif
 
     // network interfaces
     Print("network interfaces:       ");
     #if __linux__
-    struct if_nameindex *if_ni, *i;
-    if_ni = if_nameindex();
-    if(if_ni){
-        for(i = if_ni; !(i->if_index == 0 && i->if_name == nullptr); i++){
-            Print("[%s]", i->if_name);
+        struct if_nameindex *if_ni, *i;
+        if_ni = if_nameindex();
+        if(if_ni){
+            for(i = if_ni; !(i->if_index == 0 && i->if_name == nullptr); i++){
+                Print("[%s]", i->if_name);
+            }
+            if_freenameindex(if_ni);
         }
-        if_freenameindex(if_ni);
-    }
     #elif _WIN32
-    PIP_ADAPTER_INFO pAdapterInfo = 0;
-    PIP_ADAPTER_INFO pAdapter;
-    DWORD dwSize = 0;
-    if(GetAdaptersInfo(pAdapterInfo, &dwSize) == ERROR_BUFFER_OVERFLOW){
-        pAdapterInfo = (PIP_ADAPTER_INFO)malloc(dwSize);
-    }
-    if(GetAdaptersInfo(pAdapterInfo, &dwSize) == NO_ERROR){
-        pAdapter = pAdapterInfo;
-        while(pAdapter){
-            std::string name(pAdapter->AdapterName);
-            std::string description(pAdapter->Description);
-            Print("[%s (%s)]", name.c_str(), description.c_str());
-            pAdapter = pAdapter->Next;
+        PIP_ADAPTER_INFO pAdapterInfo = 0;
+        PIP_ADAPTER_INFO pAdapter;
+        DWORD dwSize = 0;
+        if(GetAdaptersInfo(pAdapterInfo, &dwSize) == ERROR_BUFFER_OVERFLOW){
+            pAdapterInfo = (PIP_ADAPTER_INFO)malloc(dwSize);
         }
-    }
-    if(pAdapterInfo){
-        free(pAdapterInfo);
-    }
+        if(GetAdaptersInfo(pAdapterInfo, &dwSize) == NO_ERROR){
+            pAdapter = pAdapterInfo;
+            while(pAdapter){
+                std::string name(pAdapter->AdapterName);
+                std::string description(pAdapter->Description);
+                Print("[%s (%s)]", name.c_str(), description.c_str());
+                pAdapter = pAdapter->Next;
+            }
+        }
+        if(pAdapterInfo){
+            free(pAdapterInfo);
+        }
     #else
-    Print("unknown");
+        Print("unknown");
     #endif
     Print("\n");
 
@@ -111,9 +120,9 @@ void MainApplication::PrintSystemInfo(void){
     auto timePoint = std::chrono::system_clock::now();
     std::time_t systemTime = std::chrono::system_clock::to_time_t(timePoint);
     std::tm* gmTime = std::gmtime(&systemTime);
-    Print("PRISMA version:           %s\n", strVersion.c_str());
-    Print("compiler version:         %s\n", strCompilerVersion.c_str());
-    Print("built (local):            %s\n", strBuilt.c_str());
+    Print("PRISMA version:           %s\n", PRISMA_VERSION);
+    Print("compiler version:         %s\n", __VERSION__);
+    Print("built (local):            %s %s\n", __DATE__, __TIME__);
     Print("current time (UTC):       %04u-%02u-%02u %02u:%02u:%02u\n", 1900 + gmTime->tm_year, 1 + gmTime->tm_mon, gmTime->tm_mday, gmTime->tm_hour, gmTime->tm_min, gmTime->tm_sec);
     #ifdef DEBUG
     Print("DEBUG:                    1\n");
